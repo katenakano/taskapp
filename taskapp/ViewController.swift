@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let realm = try! Realm()
         
         if searchText.isEmpty {
-           var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
+            taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
         } else {
             let predicate =
         NSPredicate(format: "category = %@", searchText)
